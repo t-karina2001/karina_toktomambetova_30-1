@@ -1,0 +1,9 @@
+{% extends 'layouts/index.html' %}
+
+{% block content %}
+    <form action="{% url 'review_create_view' product.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Review">
+    </form>
+{% endblock %}
